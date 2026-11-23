@@ -7,7 +7,7 @@ UBC Faculty of Medicine and Royal Columbian Hospital · 2024 to present
 
 ![Dye injected into the canal model at 1 g (top) and 0 g (bottom)](media/dye_spread_1g_vs_0g.gif)
 
-*The same canal model, the same 2 mL injection. Top row: normal gravity. Bottom row: microgravity on the Airbus A310 Zero-G. Red is 5% dextrose (heavier than the saline "CSF"), green is normal saline (same density), blue is distilled water (lighter). On the ground the heavy red solution keeps travelling along the canal; in microgravity all three stop at about the same distance.*
+*The same canal model, the same 2 mL injection. Top row: normal gravity. Bottom row: microgravity on the Airbus A310 Zero-G. Red is 5% dextrose (heavier than the saline "CSF"), green is normal saline (same density), blue is distilled water (lighter). On the ground the heavy red solution keeps travelling along the canal; in microgravity all three stop at about the same distance.* ([MP4 with timer](media/dye_spread_1g_vs_0g.mp4))
 
 ---
 
@@ -21,8 +21,11 @@ The project had two parts, each written up as a first-author paper.
 
 ### 1. Building a spinal canal you can see through · [details](docs/1_canal_model.md)
 
-<p align="center"><img src="figures/model_development/model_development_strip.png" alt="CT scan, traced canal, PVA print, epoxy cast" height="420"></p>
-<p align="center"><sub>CT (VerSe) → canal traced in 3D Slicer → PVA print → hollow epoxy cast</sub></p>
+<p align="center"><img src="figures/model_development/workflow_ct_to_print.png" alt="CT slice, segmentation in 3D Slicer, mesh in Blender, PVA print" width="560"></p>
+<p align="center"><sub>(a) CT slice from the VerSe dataset · (b) canal segmented in 3D Slicer · (c) mesh refined in Blender · (d) PVA print, before casting</sub></p>
+
+![Finished epoxy canal with a calibration ruler, dye injected](figures/model_development/epoxy_canal_with_ruler.png)
+<p align="center"><sub>The finished epoxy canal with its calibration ruler (head end on the right)</sub></p>
 
 I segmented the spinal canal (C3 to L5) by hand from an open CT dataset in 3D Slicer and cleaned the mesh in Blender. Dr. Alex Suen printed it in water-soluble PVA after several rounds of print testing. I cast the print in clear epoxy and dissolved the core out, leaving a hollow, transparent, anatomically shaped canal 44 cm long, with a 25-gauge spinal needle fixed in the lower lumbar region. It sits in a closed saline circuit that can be flushed and reset between injections.
 
@@ -32,13 +35,18 @@ The geometry is in [`model/`](model/). GitHub will show it in 3D.
 
 ### 2. Flying it on parabolic flights · [details](docs/2_parabolic_flight.md)
 
-| Closed circuit | Ground rig | Flight rack |
+![Circuit: saline reservoir, epoxy canal, injection syringe and needle, flush syringe and collection bag](figures/apparatus/circuit_schematic.png)
+
+| Ground rig | Flight glovebox | Injecting in flight |
 |---|---|---|
-| ![](figures/apparatus/closed_circuit_diagram.png) | ![](figures/apparatus/ground_rig.png) | ![](figures/apparatus/flight_rack.png) |
+| ![](figures/apparatus/ground_rig.png) | ![](figures/apparatus/flight_glovebox_rack.png) | ![](figures/apparatus/flight_glovebox_injection.png) |
 
 We took the model on the European Space Agency / Novespace parabolic flight campaign VP186 (Bordeaux, 2025): three flight days, 30 parabolas a day, each giving 22–25 s of weightlessness, one injection per parabola. I flew as an experimenter.
 
-![Spread at 20 s, 1 g vs 0 g](figures/results/spread_at_20s_1g_vs_0g_boxplots.png)
+<p align="center"><img src="media/parabolic_flight_cabin.gif" alt="Inside the A310 Zero-G during a parabola" width="480"></p>
+<p align="center"><sub>Inside the A310 Zero-G during a parabola (<a href="media/parabolic_flight_cabin.mp4">MP4</a>)</sub></p>
+
+![Spread at 20 s, 1 g vs 0 g](figures/results/spread_at_20s_1g_vs_0g.png)
 
 **Result.** On the ground the solutions separated by density, as expected. In microgravity they didn't: all three moved a few millimetres between 5 and 10 s and then stopped, ending within about 56–62 mm of the needle, indistinguishable from plain saline on the ground. The most likely reading is that without gravity the only thing moving the drug early on is the push of the injection itself.
 
@@ -83,7 +91,7 @@ A separate computational (CFD) study grew out of this experiment and isn't inclu
 model/           canal geometry (STL) and how it was made
 docs/            fuller write-ups of the two studies
 figures/         model development, apparatus and result plots
-media/           1 g vs 0 g comparison video (MP4) and GIF
+media/           1 g vs 0 g comparison and in-flight video (MP4 and GIF)
 presentations/   IAC 2025 slides, CSC 2026 poster
 abstracts/       IAC 2025 and CSC 2026 abstracts
 ```

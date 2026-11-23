@@ -20,6 +20,10 @@ Teaching about how spinal anesthetics spread usually relies on diagrams or glass
 | Needle | 25-gauge 3.5-inch Quincke spinal needle at about L3–4, tip 3 mm into the lumen, bevel facing up the canal, glued in place |
 | Circuit | Saline bag → one-way valve → canal → one-way valve → three-way stopcock → 50 mL flush syringe and collection bag. Closed during each observation |
 
+![Building the model: CT, segmentation, mesh, PVA print](../figures/model_development/workflow_ct_to_print.png)
+
+![The finished epoxy canal with its calibration ruler](../figures/model_development/epoxy_canal_with_ruler.png)
+
 ![Model in its circuit](../figures/apparatus/ground_rig.png)
 
 ## The bench test
@@ -36,7 +40,8 @@ Teaching about how spinal anesthetics spread usually relies on diagrams or glass
 - **It separated the solutions.** Solution, time and their interaction were all significant (P < 0.001). Estimated spread at 20 s: dextrose 111 mm (95% CI 106–116), distilled water 70 mm (66–75), saline 60 mm (55–64).
 - **Reviewers agreed closely**, best for the red dextrose (ICC 0.99) and least for saline (0.79–0.84).
 
-![Change in spread per 5 s interval on the ground](../figures/results/interval_change_1g.png)
+![Estimated spread over time on the bench](../figures/results/bench_spread_over_time.png)
+<sub>Model-estimated means ± 95% CI, 10 trials per solution.</sub>
 
 ## What it doesn't show
 

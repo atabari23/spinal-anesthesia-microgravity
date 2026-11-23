@@ -8,7 +8,7 @@ Summary of: Tabari A, Suen A, Wagner S, Turnock M. *Intrathecal drug distributio
 
 Does taking gravity away remove the density-driven separation of spinal injectates? We expected clear separation at 1 g and, in microgravity, all three solutions behaving like a solution of the same density as CSF.
 
-As far as we know this is the first experiment on intrathecal injectate spread in real (not simulated) microgravity.
+As far as we know this is the first experiment on intrathecal injectate spread in real microgravity.
 
 ## Setup
 
@@ -20,23 +20,28 @@ As far as we know this is the first experiment on intrathecal injectate spread i
 - **Exclusions:** 45 of the 90 flight trials were excluded because air bubbles hid the dye front, leaving 15 per solution. The rule was about whether the front could be seen, not how far it went.
 - **Analysis:** linear mixed-effects models in R (lme4, lmerTest, emmeans) within each gravity condition, consecutive 5 s contrasts with Holm correction, and a comparison of each flight solution at 20 s against ground saline.
 
-| Flight rack | Ground circuit |
+![Circuit schematic](../figures/apparatus/circuit_schematic.png)
+
+| Flight glovebox | Injecting in flight |
 |---|---|
-| ![](../figures/apparatus/flight_rack.png) | ![](../figures/apparatus/closed_circuit_diagram.png) |
+| ![](../figures/apparatus/flight_glovebox_rack.png) | ![](../figures/apparatus/flight_glovebox_injection.png) |
+
+![Still frames at 1 g (top) and 0 g (bottom) with the measuring ruler](../figures/results/dye_frames_1g_0g.png)
 
 ## Results
 
 **At 1 g the solutions separated.** Median spread at 20 s: dextrose 114 mm, distilled water 72 mm, saline 60 mm. Dextrose kept moving through every 5 s interval (about +16 mm each, P < 0.001); water crept forward; saline barely moved after the first few seconds.
 
+![Spread over time, 1 g vs 0 g](../figures/results/spread_over_time_1g_vs_0g.png)
+<sub>Model-estimated means ± 95% CI. Stars mark a significant change from the previous time point (* P < 0.05, *** P < 0.001, Holm-adjusted).</sub>
+
 **In microgravity they didn't.** Every solution moved about 3–4 mm between 5 and 10 s and then stopped (no significant change from 10 to 20 s for any of them). At 20 s the medians were all within 56–62 mm.
 
-![Spread at 20 s, 1 g vs 0 g](../figures/results/spread_at_20s_1g_vs_0g_boxplots.png)
+![Spread at 20 s, 1 g vs 0 g](../figures/results/spread_at_20s_1g_vs_0g.png)
 
 **Flight vs ground saline.** None of the three flight solutions differed from ground saline at 20 s (differences −3.9 to +1.2 mm; all adjusted P ≥ 0.65).
 
-| 1 g, change per 5 s | 0 g, change per 5 s |
-|---|---|
-| ![](../figures/results/interval_change_1g.png) | ![](../figures/results/interval_change_0g.png) |
+![Flight solutions vs ground saline at 20 s](../figures/results/flight_vs_ground_saline_20s.png)
 
 ## How we read it
 
@@ -56,7 +61,3 @@ For space medicine, that cuts both ways. Spread might be less variable, but the 
 ## Next steps the paper proposes
 
 A compliant model with CSF pulsation on a longer microgravity platform (suborbital or orbital); repeating the test with real local anesthetic formulations; using these paired 1 g and 0 g measurements to check computer simulations, including lunar and Martian gravity; and tilt-table bench tests, since the finding predicts that baricity effects should scale with how much gravity acts along the spine.
-
-## A note on the needle level
-
-The 2025 conference abstracts give the needle site as T5. The manuscripts give L4 (flight) and about L3–4 (ground bench study); treat the manuscripts as the reference.
